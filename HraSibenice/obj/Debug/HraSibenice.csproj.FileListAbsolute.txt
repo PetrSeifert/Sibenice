@@ -18,6 +18,16 @@ C:\Users\JanaC\OneDrive\Plocha\x\HraSibenice\HraSibenice\obj\Debug\HraSibenice.c
 C:\Users\JanaC\OneDrive\Plocha\x\HraSibenice\HraSibenice\obj\Debug\HraSibenice.csproj.CoreCompileInputs.cache
 C:\Users\JanaC\OneDrive\Plocha\x\HraSibenice\HraSibenice\obj\Debug\HraSibenice.exe
 C:\Users\JanaC\OneDrive\Plocha\x\HraSibenice\HraSibenice\obj\Debug\HraSibenice.pdb
+C:\Users\petrs\OneDrive\Desktop\HraSibenice\HraSibenice\bin\Debug\HraSibenice.exe.config
+C:\Users\petrs\OneDrive\Desktop\HraSibenice\HraSibenice\bin\Debug\HraSibenice.exe
+C:\Users\petrs\OneDrive\Desktop\HraSibenice\HraSibenice\bin\Debug\HraSibenice.pdb
+C:\Users\petrs\OneDrive\Desktop\HraSibenice\HraSibenice\obj\Debug\HraSibenice.csprojAssemblyReference.cache
+C:\Users\petrs\OneDrive\Desktop\HraSibenice\HraSibenice\obj\Debug\HraSibenice.Form1.resources
+C:\Users\petrs\OneDrive\Desktop\HraSibenice\HraSibenice\obj\Debug\HraSibenice.Properties.Resources.resources
+C:\Users\petrs\OneDrive\Desktop\HraSibenice\HraSibenice\obj\Debug\HraSibenice.csproj.GenerateResource.cache
+C:\Users\petrs\OneDrive\Desktop\HraSibenice\HraSibenice\obj\Debug\HraSibenice.csproj.CoreCompileInputs.cache
+C:\Users\petrs\OneDrive\Desktop\HraSibenice\HraSibenice\obj\Debug\HraSibenice.exe
+C:\Users\petrs\OneDrive\Desktop\HraSibenice\HraSibenice\obj\Debug\HraSibenice.pdb
 C:\Users\petrs\Downloads\HraSibenice\HraSibenice\bin\Debug\HraSibenice.exe.config
 C:\Users\petrs\Downloads\HraSibenice\HraSibenice\bin\Debug\HraSibenice.exe
 C:\Users\petrs\Downloads\HraSibenice\HraSibenice\bin\Debug\HraSibenice.pdb

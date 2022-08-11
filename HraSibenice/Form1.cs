@@ -1,12 +1,8 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HraSibenice
@@ -19,17 +15,48 @@ namespace HraSibenice
             GameStart();
         }
 
+        private Random random = new Random();
         private string sentence;
         private int errors = 0;
         private IEnumerable<char> choosedChars = new List<char>();
+        private DialogResult result;
 
         private void GameStart()
         {
-            sentence = "hello".ToUpper();
+            sentence = GetSentence;
             errors = 0;
             choosedChars = new List<char>();
             labelSentence.Text = GetMask();
             LoadPicture(errors);
+            ShowButtons();
+        }
+
+        private string GetSentence
+        {
+            get
+            {
+                string fn = GetAppDir + @"\sentences.txt";
+                if (File.Exists(fn))
+                {
+                    string[] sentences = File.ReadAllLines(fn);
+                    int i = random.Next(0, sentences.Count());
+                    return sentences[i];
+                }
+                else
+                {
+                    MessageBox.Show(String.Format("File {0} wasn´t found!", fn));
+                    Close();
+                    return "";
+                }
+            }
+        }
+
+        private void ShowButtons()
+        {
+            foreach (Button btn in buttonsPanel.Controls)
+            {
+                btn.Visible = true;
+            }
         }
 
         private string GetMask()
@@ -70,37 +97,74 @@ namespace HraSibenice
 
         private string GetAppDir
         {
-            get 
+            get
             {
                 FileInfo fi = new FileInfo(Application.ExecutablePath);
                 return fi.DirectoryName;
             }
         }
 
-        private bool LoadPicture(int i)
+        private void LoadPicture(int i)
         {
             string dir = GetAppDir + @"\pics\";
             string fn = dir + i.ToString() + ".png";
             if (File.Exists(fn))
             {
                 pictureBox.Image = new Bitmap(fn);
-                return true;
             }
-            return false;
         }
 
         private void GameOver()
         {
-           
+            result = MessageBox.Show("GAME OVER!!! \nThe sentece was:" + sentence + "\nNew game?", "GameOver", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                GameStart();
+            }
+            else
+            {
+                Close();
+            }
         }
 
         private void Miss()
         {
             errors++;
-            bool ok = LoadPicture(errors);
-            if (!ok)
+            LoadPicture(errors);
+            if (errors == 10)
             {
                 GameOver();
+            }
+        }
+
+        private bool Win()
+        {
+            foreach (char c in sentence)
+            {
+                if (!(c == ' ' || choosedChars.Contains(c)))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private void GameWin()
+        {
+            string dir = GetAppDir + @"\pics\";
+            string fn = dir + "win.png";
+            if (File.Exists(fn))
+            {
+                pictureBox.Image = new Bitmap(fn);
+            }
+            result = MessageBox.Show("You won!!!\nNew game?", "win", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                GameStart();
+            }
+            else
+            {
+                Close();
             }
         }
 
@@ -115,6 +179,11 @@ namespace HraSibenice
             if (hit)
             {
                 labelSentence.Text = GetMask();
+                bool win = Win();
+                if (win)
+                {
+                    GameWin();
+                }
             }
             else
             {

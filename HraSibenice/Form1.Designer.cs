@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.labelSentence = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.buttonsPanel = new System.Windows.Forms.Panel();
@@ -70,7 +71,7 @@
             this.labelSentence.Name = "labelSentence";
             this.labelSentence.Size = new System.Drawing.Size(311, 26);
             this.labelSentence.TabIndex = 6;
-            this.labelSentence.Text = "SLOVO";
+            this.labelSentence.Text = "SENTENCE";
             this.labelSentence.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pictureBox
@@ -411,10 +412,11 @@
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.labelSentence);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Šibenice";
+            this.Text = "Hangman";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.buttonsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
